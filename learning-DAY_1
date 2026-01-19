@@ -1,0 +1,18 @@
+from google import genai
+
+
+# Configure API key
+client = genai.Client(api_key=API_KEY)  # your real API key
+
+# Generate content
+prompt = input("Enter your Prompt: ")
+response = client.models.generate_content(
+    model="gemini-2.5-flash",
+    contents=prompt
+)
+
+
+print("The response is")
+print("----------------------")
+print(response.text)
+print("----------------------")
